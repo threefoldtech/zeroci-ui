@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-card class="mt-15 pt-15">
+    <v-card class="mt-15 pt-15 px-4 pb-4">
       <h1 class="text-center display-3 mb-15">ZeroCI Configuration</h1>
 
       <v-stepper vertical v-model="step">
@@ -26,6 +26,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import VersionCtrlSystem from "@/components/ZeroConfig-steps/VersionCtrlSystem.vue";
+import RepositoriesStep from "@/components/ZeroConfig-steps/RepositoriesStep.vue";
 
 @Component({
   name: "ZeroConfig",
@@ -35,13 +36,18 @@ export default class ZeroConfig extends Vue {
     return this.$store.state.ZeroConfigStore;
   }
 
-  step = 1;
+  step = 2;
 
   steps = [
     {
       namespace: "versionCtrlSystem",
       name: "Version Control System",
       cmp: VersionCtrlSystem,
+    },
+    {
+      namespace: "repositories",
+      name: "Repositories",
+      cmp: RepositoriesStep,
     },
   ];
 }

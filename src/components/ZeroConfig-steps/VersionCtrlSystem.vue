@@ -2,7 +2,6 @@
   <v-form v-model="vcs.valid">
     <v-text-field
       label="Domain"
-      focus
       v-model="vcs.domain"
       :rules="[isDomain('Please provide a valid domain.')]"
     />
@@ -38,21 +37,20 @@ export default class VersionCtrlSystem extends Vue {
   }
 
   next() {
-    const { domain, host, token } = this.vcs;
-    this.$axios
-      .post("/vcs_config", {
-        domain,
-        vcs_host: host,
-        vcs_token: token,
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log("error", err);
-      });
-
-    // this.$emit("update:step", 2);
+    // const { domain, host, token } = this.vcs;
+    // this.$axios
+    //   .post("/vcs_config", {
+    //     domain,
+    //     vcs_host: host,
+    //     vcs_token: token,
+    //   })
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((err) => {
+    //     console.log("error", err);
+    //   });
+    this.$emit("update:step", 2);
   }
 }
 </script>

@@ -11,9 +11,11 @@ export default new Vuex.Store({
       token: "",
       valid: false,
     },
-    // repositories: {
-    //   username: "",
-    //   organizations
-    // }
+    repositories: {
+      username: "",
+      organizations: <string[]>[],
+      repos: <string[]>[],
+      valid: false,
+    },
   },
 });

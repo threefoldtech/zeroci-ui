@@ -3,16 +3,7 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-export interface ZeroConfigState {
-  versionCtrlSystem: {
-    domain: string;
-    host: string;
-    token: string;
-    valid: boolean;
-  };
-}
-
-export default new Vuex.Store<ZeroConfigState>({
+export default new Vuex.Store({
   state: {
     versionCtrlSystem: {
       domain: "",
@@ -20,5 +11,9 @@ export default new Vuex.Store<ZeroConfigState>({
       token: "",
       valid: false,
     },
+    // repositories: {
+    //   username: "",
+    //   organizations
+    // }
   },
 });

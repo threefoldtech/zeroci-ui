@@ -1,6 +1,5 @@
 <template>
   <v-app>
-    {{ $store.state }}
     <ZeroConfig />
   </v-app>
 </template>

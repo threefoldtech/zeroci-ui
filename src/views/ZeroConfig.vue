@@ -9,8 +9,6 @@
             :key="s.namespace"
             :step="i + 1"
             :complete="zcs[s.namespace].valid"
-            :editable="zcs[s.namespace].valid"
-            edit-icon="mdi-check"
           >
             {{ s.name }}
           </v-stepper-step>
@@ -27,6 +25,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import VersionCtrlSystem from "@/components/ZeroConfig-steps/VersionCtrlSystem.vue";
 import RepositoriesStep from "@/components/ZeroConfig-steps/RepositoriesStep.vue";
+import TelegramStep from "@/components/ZeroConfig-steps/TelegramStep.vue";
 
 @Component({
   name: "ZeroConfig",
@@ -36,7 +35,7 @@ export default class ZeroConfig extends Vue {
     return this.$store.state.ZeroConfigStore;
   }
 
-  step = 2;
+  step = 1;
 
   steps = [
     {
@@ -48,6 +47,11 @@ export default class ZeroConfig extends Vue {
       namespace: "repositories",
       name: "Repositories",
       cmp: RepositoriesStep,
+    },
+    {
+      namespace: "telegram",
+      name: "Telegram",
+      cmp: TelegramStep,
     },
   ];
 }

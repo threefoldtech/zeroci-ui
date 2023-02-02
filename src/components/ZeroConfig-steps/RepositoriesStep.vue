@@ -184,6 +184,7 @@ export default class RepositoriesStep extends Vue {
   }
 
   validateRepos(repos: string[]) {
+    if (repos.length === 0) return "Repositories is required.";
     const selectableRepos = this.getSelectableRepos();
     for (const repo of repos) {
       if (!selectableRepos.includes(repo)) {

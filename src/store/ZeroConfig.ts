@@ -17,5 +17,10 @@ export default new Vuex.Store({
       repos: <string[]>[],
       valid: false,
     },
+    telegram: {
+      id: "",
+      token: "",
+      valid: false,
+    },
   },
 });

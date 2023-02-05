@@ -26,6 +26,7 @@ import { Component, Vue } from "vue-property-decorator";
 import VersionCtrlSystem from "@/components/ZeroConfig-steps/VersionCtrlSystem.vue";
 import RepositoriesStep from "@/components/ZeroConfig-steps/RepositoriesStep.vue";
 import TelegramStep from "@/components/ZeroConfig-steps/TelegramStep.vue";
+import ApplyStep from "@/components/ZeroConfig-steps/ApplyStep.vue";
 
 @Component({
   name: "ZeroConfig",
@@ -53,6 +54,11 @@ export default class ZeroConfig extends Vue {
       name: "Telegram",
       cmp: TelegramStep,
     },
+    {
+      namespace: "telegram",
+      name: "Apply",
+      cmp: ApplyStep
+    }
   ];
 }
 </script>

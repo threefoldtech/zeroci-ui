@@ -37,7 +37,7 @@
       :loading="loading"
       color="primary"
     >
-      Done
+      Next
     </v-btn>
     <v-btn @click="$emit('update:step', 2)" color="error" text class="ml-2">
       Back
@@ -67,9 +67,7 @@ export default class TelegramStep extends Vue {
         chat_id: "@" + id,
         bot_token: token,
       })
-      .then(() => {
-        console.log(this.$store.state.ZeroConfigStore);
-      })
+      .then(() => this.$emit('update:step', 4))
       .catch((err: AxiosError) => {
         // this.error = err.response?.data ?? "";
         const error = (
